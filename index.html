@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Year grid — a minimal year-at-a-glance planner</title>
+<meta name="description" content="A one-page year planner: twelve months across, thirty-one days down. Fill any day with a flat colour, keep ten items beside it, and print it on A4.">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23fdfcf8'/%3E%3Crect x='4' y='4' width='10' height='10' fill='%23eddfc6'/%3E%3Crect x='18' y='4' width='10' height='10' fill='%23b6d5e7'/%3E%3Crect x='4' y='18' width='10' height='10' fill='%23c2d9b3'/%3E%3Crect x='18' y='18' width='10' height='10' fill='%23eeb6a9'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="bar">
+  <div class="bar__inner">
+    <h1 class="title">Year grid</h1>
+
+    <div class="palette" id="palette" role="group" aria-label="Fill colour">
+      <button type="button" class="swatch" data-color="sand" style="--sw: var(--c-sand)" aria-pressed="true" aria-label="Sand" title="Sand — key 1"></button>
+      <button type="button" class="swatch" data-color="clay" style="--sw: var(--c-clay)" aria-pressed="false" aria-label="Clay" title="Clay — key 2"></button>
+      <button type="button" class="swatch" data-color="sky" style="--sw: var(--c-sky)" aria-pressed="false" aria-label="Sky" title="Sky — key 3"></button>
+      <button type="button" class="swatch" data-color="sage" style="--sw: var(--c-sage)" aria-pressed="false" aria-label="Sage" title="Sage — key 4"></button>
+      <button type="button" class="swatch" data-color="lilac" style="--sw: var(--c-lilac)" aria-pressed="false" aria-label="Lilac" title="Lilac — key 5"></button>
+      <button type="button" class="swatch" data-color="stone" style="--sw: var(--c-stone)" aria-pressed="false" aria-label="Stone" title="Stone — key 6"></button>
+      <button type="button" class="swatch swatch--erase" data-color="none" aria-pressed="false" aria-label="Eraser" title="Eraser"></button>
+    </div>
+
+    <div class="bar__actions">
+      <button type="button" class="btn" id="clear">Clear</button>
+      <button type="button" class="btn btn--solid" id="print">Print</button>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+  <div class="sheet-scroll">
+    <div class="sheet-wrap">
+      <section class="sheet" aria-label="Year planner">
+        <div class="board" id="board" role="group" aria-label="Twelve months by thirty-one days"></div>
+      </section>
+    </div>
+  </div>
+
+  <p class="hint">
+    Click or drag to fill a day. Keys <b>1–6</b> pick a colour, <b>Backspace</b> clears.
+    Fills are saved in this browser.
+  </p>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
